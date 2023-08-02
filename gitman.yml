@@ -1,0 +1,55 @@
+location: external_addons
+sources:
+  - repo: https://github.com/OCA/maintenance
+    name: oca_maintenance
+    rev: "16.0"
+    type: git
+    params:
+    sparse_paths:
+      - "base_maintenance"
+      - "maintenance_request_sequence"
+      - "maintenance_project"
+    links:
+      -
+    scripts:
+      - sh /usr/lib/python3/dist-packages/odoo/install_dependencies.sh
+
+  - repo: https://github.com/archeti-org/maintenance
+    name: archeti_maintenance
+    rev: "89a858fd2f151453eac9192361c1fa4cca581c39"
+    type: git
+    params:
+    sparse_paths:
+      - "maintenance_plan"
+    links:
+      -
+    scripts:
+      - sh /usr/lib/python3/dist-packages/odoo/install_dependencies.sh
+
+  - repo: https://github.com/OCA/maintenance
+    name: oca_maintenance_timesheet
+    rev: "15.0"
+    type: git
+    params:
+    sparse_paths:
+      - "maintenance_timesheet"
+    links:
+      -
+    scripts:
+      - sh /usr/lib/python3/dist-packages/odoo/install_dependencies.sh
+  
+  - repo: https://github.com/OCA/helpdesk
+    name: oca_helpdesk_mgmt
+    rev: "16.0"
+    type: git
+    params:
+    sparse_paths:
+      - "helpdesk_mgmt"
+      - "helpdesk_mgmt_project"
+    links:
+      -
+    scripts:
+      - sh /usr/lib/python3/dist-packages/odoo/install_dependencies.sh
+default_group: ''
+groups:
+  -
